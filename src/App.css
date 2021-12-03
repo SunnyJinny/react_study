@@ -1,0 +1,45 @@
+.Container{
+  text-align: center;
+}
+
+p{
+  font-size: 4em;
+  text-align: center;
+}
+
+button{
+  all: unset;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  font-size: 2em;
+  padding: 1em;
+  margin: 1em;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 10em;
+  background-color: blanchedalmond;
+  -webkit-transform: scale(.3);
+  transform: scale(.3);
+  opacity: 0;
+  transition: all .3s;
+}
+
+button:hover::before{
+  opacity: 1;
+  background-color: chocolate;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  transition: -webkit-transform .6s cubic-bezier(0.08, .35, 0.13, 1.02);
+  transition: transform .6s cubic-bezier(0.08, .35, 0.13, 1.02);
+}
+
